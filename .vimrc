@@ -20,7 +20,12 @@ map <C-Tab> :bn!<CR>
 let mapleader = ","
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
+let macvim_hig_shift_movement = 1
 
+" Fuf config
+nmap <silent> <leader>f :FufFile<CR>
+nmap <silent> <leader>d :FufBuffer<CR>
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr|DS_Store)($|[/\\])'
 
 " Popupmenu hacks
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
