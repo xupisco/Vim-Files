@@ -26,6 +26,7 @@ let macvim_hig_shift_movement = 1
 nmap <silent> <leader>f :FufFile<CR>
 nmap <silent> <leader>d :FufBuffer<CR>
 let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|swp)$|(^|[/\\])\.(hg|git|bzr|DS_Store)($|[/\\])'
+let g:fuf_previewHeight = 0
 
 " Popupmenu hacks
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
