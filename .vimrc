@@ -12,6 +12,8 @@ set autoread
 set ttyfast
 set nu
 set cindent
+set smartindent
+set autoindent
 set is hls ic scs magic
 set nocompatible
 set undolevels=1000
