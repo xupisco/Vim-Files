@@ -15,6 +15,8 @@ set cindent
 set is hls ic scs magic
 set nocompatible
 set undolevels=1000
+
+" Some binds
 set whichwrap=<,>,h,l,[,]
 map <C-Tab> :bn!<CR>
 let mapleader = ","
