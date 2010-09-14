@@ -18,10 +18,16 @@ set is hls ic scs magic
 set nocompatible
 set undolevels=1000
 
+" Buffer stuff
+set switchbuf=usetab
+" au BufAdd,BufNewFile * nested tab sball
+
 " Some binds
-set whichwrap=<,>,h,l,[,]
-map <C-Tab> :bn!<CR>
 let mapleader = ","
+set whichwrap=<,>,h,l,[,]
+map <C-Tab> :tabn<CR>
+map <Leader>t :tab sball<CR>
+map <Leader>b :ConqueTermSplit 
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 let macvim_hig_shift_movement = 1
@@ -50,8 +56,9 @@ set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
 set background=dark
 set guifont=Monaco:h12
 set guioptions-=T
-set guioptions-=r
+" set guioptions-=r
 set guioptions-=L
+" set guioptions+=b
 set fuopt+=maxhorz
 " colorscheme wombat
 colorscheme molokai
@@ -69,8 +76,8 @@ set lazyredraw                          " do not redraw while running macros
 set linespace=0                         " don't insert any extra pixel lines betweens rows
 set showmatch                           " show matching brackets
 set matchtime=5                         " how many tenths of a second to blink matching brackets for
-set columns=100                         " window width
-set lines=35                            " window height
+set columns=110                         " window width
+set lines=40                            " window height
 set ruler
 set showcmd
 set scrolloff=3                         " how many visible lines before scroll?
