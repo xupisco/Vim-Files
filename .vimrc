@@ -8,6 +8,7 @@ set noerrorbells                        " don't make noise
 set linebreak
 set nobackup
 set nowritebackup
+set noswapfile
 set autoread
 set ttyfast
 set nu
@@ -58,7 +59,7 @@ set guifont=Monaco:h12
 set guioptions-=T
 " set guioptions-=r
 set guioptions-=L
-" set guioptions+=b
+set guioptions+=b
 set fuopt+=maxhorz
 " colorscheme wombat
 colorscheme molokai

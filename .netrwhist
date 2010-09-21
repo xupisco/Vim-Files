@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/leandro/Sites/vivoon'
 let g:netrw_dirhist_2='scp://xupisco@xupisco.net/'
 let g:netrw_dirhist_3='scp://xupisco@xupisco.net/webapps/'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='ftp://gamelib1@ftp.gamelib.com.br/'
 let g:netrw_dirhist_6='ftp://gamelib1@ftp.gamelib.com.br/public_html/'
 let g:netrw_dirhist_7='ftp://gamelib1@ftp.gamelib.com.br/public_html/porao/'
 let g:netrw_dirhist_8='/Users/leandro'
+let g:netrw_dirhist_9='/Users/leandro/Sites/_revolutions'
