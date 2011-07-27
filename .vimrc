@@ -12,6 +12,7 @@ set autoread                                " Atualiza arquivo automaticamente c
 set hidden                                  " Permite alterar o buffer sem salvar o antigo
 set wildmode=full                           " Método de auto-complete para comandos
 set wildmenu                                " Ativa auto-complete para comandos
+let mapleader=","                           " Muda tecla padrão para ,
 
 " Editing
 set autoindent                              " Identação automática
@@ -22,10 +23,15 @@ set incsearch                               " Efetua a busca conforme vai digita
 set nowrap                                  " Quebrar linhas é para os fracos
 
 " Omni-complete configuration
-inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-filetype plugin on                          " Habilita omni-complete
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>" " Faz o ESC fechar o popup sem sair do insert
+filetype on                                 " Habilita detecção do tipo de arquivo
+filetype plugin indent on                   " Habilita omni-complete
 set ofu=syntaxcomplete#Complete             " Define modo do omni-complete
 set completeopt=menu,preview,longest        " Tenta fazer o pop-up do omni parecer de um IDE
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Theming
 colorscheme wombat                          " Também gosto do vilight, molokai e ir_black
@@ -42,7 +48,9 @@ set ruler                                   " Mostra barra de status com posiç�
 set nohls                                   " Não seleciona resultados da busca. set hls para exibir
 set number                                  " Mostra os números das linhas
 set numberwidth=5                           " Largura da barra com número das linhas
-set scrolloff=3                             " Número de linhas visíveis durante o scroll
+set scrolloff=3                             " Número de linhas visíveis durante o scrolls
+set laststatus=2                            " Número de linhas para a barra de status
+set statusline=%<%f\ %h%w%m%r%y%=L:%l/%L\ (%p%%)\ C:%c%V\ B:%o\ F:%{foldlevel('.')}
 
 " Simula esquema de identação do Textmate
 nmap <D-[> <<
