@@ -16,6 +16,7 @@ let mapleader=","                           " Muda tecla padrão para ,
 
 " Editing
 set autoindent                              " Identação automática
+set expandtab 								" Sem TABs
 set smartindent                             " Tenta ser inteligente na identação
 set tabstop=4                               " Utiliza 4 espaços no TAB, e não 8
 set shiftwidth=4                            " Força uso de espaços no TAB
@@ -24,7 +25,6 @@ set nowrap                                  " Quebrar linhas é para os fracos
 
 " Omni-complete configuration
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>" " Faz o ESC fechar o popup sem sair do insert
-filetype on                                 " Habilita detecção do tipo de arquivo
 filetype plugin indent on                   " Habilita omni-complete
 set ofu=syntaxcomplete#Complete             " Define modo do omni-complete
 set completeopt=menu,preview,longest        " Tenta fazer o pop-up do omni parecer de um IDE
@@ -35,7 +35,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Theming
 colorscheme wombat                          " Também gosto do vilight, molokai e ir_black
-set columns=110                             " Largura padrão
+set columns=100                             " Largura padrão
 set lines=40                                " Altura padrão
 set guifont=Monaco:h12                      " Fonte padrão (Mac)
 set guioptions-=T                           " Remove toolbar
@@ -51,24 +51,40 @@ set numberwidth=5                           " Largura da barra com número das l
 set scrolloff=3                             " Número de linhas visíveis durante o scrolls
 set laststatus=2                            " Número de linhas para a barra de status
 set statusline=%<%f\ %h%w%m%r%y%=L:%l/%L\ (%p%%)\ C:%c%V\ B:%o\ F:%{foldlevel('.')}
+let macvim_hig_shift_movement=1
 
+" Mappings
 " Simula esquema de identação do Textmate
 nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
+" TagList 
+nmap <Leader>t :TlistToggle<CR>
+let Tlist_Use_Right_Window = 1
+let Tlist_Inc_Winwidth = 1
+let Tlist_Show_One_File = 1
+let Tlist_Auto_Update = 1
+let Tlist_Highlight_Tag_On_BufEnter = 1
+let Tlist_Sort_Type = "name"
+
 " Supertab config (plugin)
-let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+" let g:SuperTabDefaultCompletionTypeDiscovery = "&omnifunc:<c-x><c-u>"
+" let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:acp_behaviorKeywordLength = 1
 
 " Nerdtree config (plugin)
-nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <silent> <C-D> :NERDTreeTogg`le<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 
 " Custom functions
 
-" Mapa para alternar tabs
+" Mapa para alternar tabs:tabnew
+"
 map <D-M-Right> :tabn<CR>   " Cmd + Alt + Direita
 map <D-M-Left> :tabp<CR>    " Cmd + Alt + Esquerta
 map <C-Tab> :tabn<CR>       " Control + Tab
