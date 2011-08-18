@@ -21,6 +21,7 @@ set smartindent                             " Tenta ser inteligente na identaç�
 set tabstop=4                               " Utiliza 4 espaços no TAB, e não 8
 set shiftwidth=4                            " Força uso de espaços no TAB
 set incsearch                               " Efetua a busca conforme vai digitando
+set ic                                      " Ignore case while searching
 set nowrap                                  " Quebrar linhas é para os fracos
 
 " Omni-complete configuration
@@ -32,6 +33,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 
 " Theming
 colorscheme wombat                          " Também gosto do vilight, molokai e ir_black
@@ -77,7 +79,7 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:acp_behaviorKeywordLength = 1
 
 " Nerdtree config (plugin)
-nmap <silent> <C-D> :NERDTreeTogg`le<CR>
+nmap <silent> <C-D> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 
