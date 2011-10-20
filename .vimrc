@@ -20,6 +20,7 @@ set autoindent                              " Identação automática
 set expandtab 								" Sem TABs
 set smartindent                             " Tenta ser inteligente na identação
 set tabstop=4                               " Utiliza 4 espaços no TAB, e não 8
+set softtabstop=4                           " Volta um TAB no backspace
 set shiftwidth=4                            " Força uso de espaços no TAB
 set incsearch                               " Efetua a busca conforme vai digitando
 set ic                                      " Ignore case while searching
@@ -35,6 +36,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 
 " Theming
@@ -76,7 +78,7 @@ nnoremap <leader>l :TagbarToggle<CR>
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-let g:acp_behaviorKeywordLength = 1
+let g:acp_behaviorKeywordLength = 2
 
 " Nerdtree config (plugin)
 nmap <silent> <C-D> :NERDTreeToggle<CR>
@@ -88,6 +90,7 @@ let NERDTreeQuitOnOpen = 1
 let g:Tb_UseSingleClick = 1
 let g:Tb_MoreThanOne = 0
 let g:Tb_ModSelTarget = 1
+let g:Tb_ForceDisplay = 1
 
 " Command-T config
 noremap <leader>o <Esc>:CommandT<CR>
@@ -96,6 +99,7 @@ noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 
 " Custom functions
+cnoreabbrev _w bdelete
 
 " Mapa para alternar tabs:tabnew
 "

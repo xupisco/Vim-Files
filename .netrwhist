@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/leandro/Sites/apache/bvsa'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/leandro/Desktop/Logs/GTalk.bruna@gamelib.com.br/jpegpublicidade@gmail.com/jpegpublicidade@gmail.com (2011-07-21T17.31.00-0300).chatlog'
+let g:netrw_dirhist_2='/Users/leandro/Desktop/Logs/GTalk.bruna@gamelib.com.br/lucas@gamelib.com.br/lucas@gamelib.com.br (2011-07-20T16.06.43-0300).chatlog'
+let g:netrw_dirhist_3='/Users/leandro/Desktop/Logs/GTalk.bruna@gamelib.com.br/lucaslespier@gmail.com/lucaslespier@gmail.com (2011-08-11T09.48.59-0300).chatlog'
+let g:netrw_dirhist_4='/Users/leandro/Desktop/Logs/GTalk.bruna@gamelib.com.br/lucaslespier@gmail.com/lucaslespier@gmail.com (2011-08-12T17.13.41-0300).chatlog'
+let g:netrw_dirhist_5='/Users/leandro/Desktop/Logs/MSN.bruna.costa.lima@hotmail.com/d4l@terra.com.br/d4l@terra.com.br (2011-08-12T18.42.23-0300).chatlog'
+let g:netrw_dirhist_6='/Users/leandro/Desktop/Logs/MSN.bruna.costa.lima@hotmail.com/p_volto@terra.com.br/p_volto@terra.com.br (2011-07-14T18.41.54-0300).chatlog'
+let g:netrw_dirhist_7='/Users/leandro/Desktop/Logs/GTalk.bruna@gamelib.com.br/ricardo@agenciatriade.com.br/ricardo@agenciatriade.com.br (2011-07-04T10.43.28-0300).chatlog'
