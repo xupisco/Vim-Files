@@ -78,7 +78,7 @@ nnoremap <leader>l :TagbarToggle<CR>
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-let g:acp_behaviorKeywordLength = 2
+let g:acp_behaviorKeywordLength = 4
 
 " Nerdtree config (plugin)
 nmap <silent> <C-D> :NERDTreeToggle<CR>
