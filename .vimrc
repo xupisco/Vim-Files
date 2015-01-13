@@ -28,7 +28,7 @@ set nowrap                                  " Quebrar linhas é para os fracos
 set selection=exclusive                     " Não pega o char embaixo do cursor
 
 " Omni-complete configuration
-inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>" " Faz o ESC fechar o popup sem sair do insert
+" inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>" " Faz o ESC fechar o popup sem sair do insert
 filetype plugin indent on                   " Habilita omni-complete
 set ofu=syntaxcomplete#Complete             " Define modo do omni-complete
 set completeopt=menu,preview,longest        " Tenta fazer o pop-up do omni parecer de um IDE
@@ -38,17 +38,25 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
+" Execute file being edited with <Shift> + e:
+map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
 " Theming
-colorscheme molokai                         " Também gosto do vilight, molokai e ir_black
-set columns=120                             " Largura padrão
-set lines=50                                " Altura padrão
-set guifont=Monaco:h12                      " Fonte padrão (Mac)
-set guioptions-=T                           " Remove toolbar
-set guioptions+=b                           " Remove barra de status
-set guioptions-=L                           " Sem scroll do lado esquerdo
-set fuopt+=maxhorz                          " Suporte para fullscreen: Shift + Cmd + F
-set cursorline                              " Mostra linha atual
+colorscheme hybrid                          " Também gosto do vilight, molokai e ir_black
+highlight LineNr ctermfg=black
+
+if has("gui_running")
+    set guifont=Monaco:h12                  " Fonte padrão (Mac)
+    set columns=100                         " Largura padrão
+    set lines=40                            " Altura padrão
+    set guioptions-=T                       " Remove toolbar
+    set guioptions-=b                       " Remove barra de status
+    set guioptions-=r
+    set guioptions-=L                       " Sem scroll do lado esquerdo
+    set fuopt+=maxhorz                      " Suporte para fullscreen: Shift + Cmd + F
+endif
+
+" set cursorline                            " Mostra linha atual
 set showmatch                               " Mostra caracter correspondente (), [], {}, etc...
 set ruler                                   " Mostra barra de status com posição do cursor
 set nohls                                   " Não seleciona resultados da busca. set hls para exibir
@@ -70,7 +78,6 @@ let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
 nnoremap <leader>l :TagbarToggle<CR>
-
 
 " Supertab config (plugin)
 " let g:SuperTabDefaultCompletionTypeDiscovery = "&omnifunc:<c-x><c-u>"
@@ -97,12 +104,10 @@ noremap <leader>o <Esc>:CommandT<CR>
 noremap <leader>O <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
 
-
 " Custom functions
 cnoreabbrev _w bdelete
 
 " Mapa para alternar tabs:tabnew
-"
 map <D-M-Right> :tabn<CR>   " Cmd + Alt + Direita
 map <D-M-Left> :tabp<CR>    " Cmd + Alt + Esquerta
 map <C-Tab> :tabn<CR>       " Control + Tab
